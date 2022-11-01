@@ -5,18 +5,15 @@ public class TV {
     private int channel;
     private int maxVolume;
     private int volume;
-    Scanner scanner = new Scanner(System.in);
 
     public TV(int channelsAmount, int channel, int maxVolume, int volume) {
         this.channelsAmount = channelsAmount;
-        this.channel = channel;
+        this.channel = 1;
         this.maxVolume = maxVolume;
-        this.volume = volume;
+        this.volume = 1;
     }
 
-    private void changeExactChannelMechanism() {
-        System.out.println("Set channel:");
-        int nextChannel = scanner.nextInt();
+    private void changeExactChannelMechanism(int nextChannel) {
         if (nextChannel <= channelsAmount && nextChannel > 0) {
             channel = nextChannel;
             System.out.println("Включен " + channel + " канал");
@@ -25,8 +22,8 @@ public class TV {
         }
     }
 
-    public void setExactChannel() {
-        changeExactChannelMechanism();
+    public void setExactChannel(int nextChannel) {
+        changeExactChannelMechanism(nextChannel);
     }
 
     private void changeVolumeMechanism(boolean increase) {
